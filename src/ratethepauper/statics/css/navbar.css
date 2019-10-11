@@ -1,0 +1,13 @@
+    .navbar-nav {
+      flex-direction: row;
+    }
+    
+    .nav-link {
+      float: right;
+      margin: -7px -8px -8px -2px;
+    }
+
+      .current {
+    color:black; 
+    background-color: lightgray;
+  }

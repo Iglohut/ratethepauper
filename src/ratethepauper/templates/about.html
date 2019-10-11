@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+This website is going to be for rating aspects of the house at van olde...
+
+<h1>Hello world</h1>
+<!-- {{ request.user.is_authenticated }} -->
+<p> This is a template</p>	
+
+
+<!-- CONTEXT DICTIONARIES! -->
+<p>
+	{{ my_number }},
+	{{ my_text }},
+	{{ my_list }}
+</p>
+
+<ul>
+	<li>item 1</li>
+	<li>item 2</li>
+</ul>
+
+
+<!-- FOR LOOP OVER LIST CONTEXT  -->
+<ul>
+{% for my_sub_item in my_list %}
+	{% if my_sub_item == 487 %}
+	<li> {{ forloop.counter }} - {{ my_sub_item|add:22}} </li>
+	{% elif abc == "Gotcha!" %}
+	<li>{{ forloop.counter }} - {{ my_sub_item}}</li>
+	{% else %}
+	<li>{{ forloop.counter }} - {{ my_sub_item}}</li>
+	{% endif %}
+{% endfor %}
+</ul>
+
+
+{% endblock %}
