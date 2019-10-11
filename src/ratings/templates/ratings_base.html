@@ -1,7 +1,32 @@
 {% extends 'base.html' %}
+{% block title %}ratethepauper - Ratings {% endblock %}
+
 
 {% block content %}
-My content of picture things
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/mainratings.css' %}">
 
+
+<p>This area holds aspects of living to rate. Click them and you can rate them and see their statistics.</p>
+
+<!-- HERE ARE ALL THE LIVING ASPECTS -->
+<div class="container">
+	<div class="row">
+{% if LivingAspects %}
+{% for aspect in LivingAspects %}
+		<div class="card text-center col-sm-3 text-center aspect" id="{{aspect.title}}">
+			<div class="card-body">
+				<img class="card-img fit-image" src="{{ aspect.image.url }}">
+				<h5 class="card-title">{{ aspect.title }}</h5>
+			</div>
+		</div>
+{% endfor %}
+
+
+{% else %}
+There are not aspects of living to rate yet.
+{% endif %}
+</div>	<!-- ROW DIV -->
+</div>	<!-- CONTAINER DIV -->
 
 {% endblock %}

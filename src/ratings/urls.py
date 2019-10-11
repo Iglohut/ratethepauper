@@ -7,7 +7,7 @@ from django.urls import path
 #     dynamic_lookup_view
 # )
 from .views import (
-    ratings_main_view
+    RatingsMainView
 )
 
 
@@ -21,5 +21,5 @@ app_name = 'ratings'
 # ]
 
 urlpatterns = [
-	path('', ratings_main_view, name='ratings-home')
+    path('', RatingsMainView.as_view(), name='ratings-home')
 ]

@@ -1,0 +1,23 @@
+.fit-image{
+width: 100%;
+object-fit: cover;
+float: right;
+}
+
+.card {
+	margin: 10px;
+	border-style: solid;
+}
+
+
+.card:hover {
+	background-color: lightgray;
+}
+
+
+.card-title {
+	font-size: x-large;
+	/*color: red;*/
+	font-weight: bold;
+	/*margin-top: 20px;*/
+}
