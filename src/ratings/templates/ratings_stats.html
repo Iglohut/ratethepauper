@@ -1,0 +1,12 @@
+{% load ratings_tag %}
+
+{% for aspect in LivingAspects %}
+<div class="container replace-this {{aspect.title}}" style="display: none">
+  <div class="inner">{{aspect.title}} </div>
+  <div class="inner">{% you_clicked aspect.id %}</div>
+
+</div>
+{% endfor %}
+
+{% load static %}
+<script src="{% static 'js/ratings_statsdiv.js' %}"></script>  <!-- Hides/shows the stats div 

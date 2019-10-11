@@ -1,0 +1,20 @@
+<!-- HERE ARE ALL THE LIVING ASPECTS IMAGES -->
+<div class="container">
+	<div class="row">
+{% if LivingAspects %}
+{% for aspect in LivingAspects %}
+		<div class="card text-center col-sm-3 text-center aspect" id="{{aspect.title}}">
+			<div class="card-body">
+				<img class="card-img fit-image" src="{{ aspect.image.url }}">
+				<h5 class="card-title">{{ aspect.title }}</h5>
+			</div>
+		</div>
+{% endfor %}
+
+
+
+{% else %}
+There are not aspects of living to rate yet.
+{% endif %}
+</div>	<!-- ROW DIV -->
+</div>	<!-- CONTAINER DIV -->

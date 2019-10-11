@@ -9,24 +9,17 @@
 
 <p>This area holds aspects of living to rate. Click them and you can rate them and see their statistics.</p>
 
-<!-- HERE ARE ALL THE LIVING ASPECTS -->
-<div class="container">
-	<div class="row">
-{% if LivingAspects %}
-{% for aspect in LivingAspects %}
-		<div class="card text-center col-sm-3 text-center aspect" id="{{aspect.title}}">
-			<div class="card-body">
-				<img class="card-img fit-image" src="{{ aspect.image.url }}">
-				<h5 class="card-title">{{ aspect.title }}</h5>
-			</div>
-		</div>
-{% endfor %}
+
+<!-- HERE ARE ALL THE LIVING ASPECTS IMAGES -->
+{% include 'ratings_images.html' %}
 
 
-{% else %}
-There are not aspects of living to rate yet.
-{% endif %}
-</div>	<!-- ROW DIV -->
-</div>	<!-- CONTAINER DIV -->
+
+<!--  CONTAINER TO SHOW STATS PLOTLY! -->
+{% include 'ratings_stats.html' %}
+
+
+<!--  SHOULD BE A FORM  AREA -->
+
 
 {% endblock %}
