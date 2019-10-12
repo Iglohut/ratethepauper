@@ -28,7 +28,8 @@ def get_plotly(my_title):
         "data": [{"type": "bar",
                   "x": np.random.randint(low=-10, high=10, size=100),
                   "y": np.random.randint(low=-10, high=10, size=100)}],
-        "layout": {"title": {"text": "Paupergram of " + my_title}}
+        "layout": {"title": {"text": "Paupergram of " + my_title}
+                   }
     }
 
     div = plotly.offline.plot(fig,

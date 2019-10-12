@@ -3,7 +3,7 @@
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
 {% for aspect in LivingAspects %}
-<div class="container replace-this {{aspect.title}}" style="display: initial">
+<div class="container replace-this {{aspect.title}} col-sm-6  col-xs-11 .col-md-4" style="display: initial">
   <div class="inner">{{aspect.title}} </div>
   <div class="inner">You clicked{% you_clicked aspect.id %}</div>
 
