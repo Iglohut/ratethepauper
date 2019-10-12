@@ -4,7 +4,7 @@ This is a hobby project aimed at making a website where residents of my house ca
 *This website is still in development*
 
 ### Installation
-You can test the website on your locacally. 
+You can test the website on your computer locacally. 
 ##### Ubuntu 18.04.3 LTS
 
 First clone this repository in your favourite directory. 
