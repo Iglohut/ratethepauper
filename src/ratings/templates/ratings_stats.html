@@ -1,12 +1,24 @@
 {% load ratings_tag %}
 
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
 {% for aspect in LivingAspects %}
-<div class="container replace-this {{aspect.title}}" style="display: none">
+<div class="container replace-this {{aspect.title}}" style="display: initial">
   <div class="inner">{{aspect.title}} </div>
-  <div class="inner">{% you_clicked aspect.id %}</div>
+  <div class="inner">You clicked{% you_clicked aspect.id %}</div>
+
+<!-- REMEMBER SET SIZE OF DIV RESPONSIVE -->
+
+{% autoescape off %}
+    {% get_plotly aspect.title %}
+{% endautoescape %}
+
 
 </div>
+
 {% endfor %}
 
+
+        
 {% load static %}
 <script src="{% static 'js/ratings_statsdiv.js' %}"></script>  <!-- Hides/shows the stats div 
