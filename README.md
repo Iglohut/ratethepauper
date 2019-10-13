@@ -34,20 +34,22 @@ Now go to your browser to the server suggested (e.g. http://127.0.0.1:8000/)
 * ~~Display data interactively~~
 	* Fix resize lose data plotly issue?
 	* Display the real data
+	* Display comments
 
 * Form
 	* ~~Aspects~~
-	* subchoices (internet:wifi)
+	* subchoices (internet:wifi): remove this idea, keeping it simpler?
 	* ~~Generalize from Aspects~~
 	* ~~Autoupdate plots on submit~~
 
 * Homepage
+    * Stats of all models
 	* Introduction to what is this website
 	* Google maps to the house
 	* More?
 
 * Overall styling
 	* Colour scheme
-	* Navvar
+	* Navbar
 	* Footer?
 
