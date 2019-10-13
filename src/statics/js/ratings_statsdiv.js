@@ -1,11 +1,10 @@
 document.querySelectorAll(".replace-this").forEach(a=>a.style.display = "none")
-
 // THIS FUNCTION HANDLES IMAGE CLICK AND SHOW/HIDE DIV BEHAVIOUR
 $(".card").click(function(e){
 	e.preventDefault();
-	console.log(e.currentTarget.id)
+	// console.log(e.currentTarget.id)
 	var string = '.' + e.currentTarget.id
-	console.log(e)
+	// console.log(e)
 
 	class_elems =  document.getElementsByClassName('card');
 	for (i = 0; i < class_elems.length; i++) {

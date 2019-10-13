@@ -14,6 +14,8 @@
 <!-- HERE ARE ALL THE LIVING ASPECTS IMAGES -->
 {% include 'ratings_images.html' %}
 
+<!-- To not show stuff while loading... -->
+<div class="replace-this" style="width:2000px;height:2000px"> </div> 
 
 
 <!--  CONTAINER TO SHOW STATS PLOTLY! -->
@@ -21,7 +23,25 @@
 
 
 <!--  SHOULD BE A FORM  AREA -->
+{% include 'ratings_form.html' %}
+
+
+
+
+{% load static %}
+<script src="{% static 'js/ratings_statsdiv.js' %}"></script>  
+<script type="text/javascript">document.getElementById("form-Example").remove();</script>
+
+<!-- OPEN PREVIOUSLY RATED ASPECT, without form -->
+{% if messages %}
+    {% for message in messages %}
+    <script type="text/javascript">
+    	document.querySelectorAll("#stats-{{message}}").forEach(a=>a.style.display = "inline");
+    	document.getElementById("{{message}}").style.backgroundColor = "#BC8F8F"
+    	document.getElementById("form-{{message}}").remove();
+    </script>
+    {% endfor %}
+{% endif %}
 
 
 {% endblock %}
-</div>	

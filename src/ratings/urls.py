@@ -7,7 +7,8 @@ from django.urls import path
 #     dynamic_lookup_view
 # )
 from .views import (
-    RatingsMainView
+    RatingsMainView,
+    ratings_redirect
 )
 
 
@@ -21,5 +22,6 @@ app_name = 'ratings'
 # ]
 
 urlpatterns = [
-    path('', RatingsMainView.as_view(), name='ratings-home')
+    path('', RatingsMainView.as_view(), name='ratings-home'),
+    path('<aspect>/', ratings_redirect, name='ratings-home-redirect')
 ]

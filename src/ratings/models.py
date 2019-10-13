@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 from django.conf import settings
 # from django.db import models
-# from django.urls import reverse
+from django.urls import reverse
 
 
 # test list field from django.db import models
@@ -71,10 +71,15 @@ class LivingAspects(models.Model):
 
 # Make a model that stores all ratings
 class AspectRatings(models.Model):
-    title = models.CharField(max_length=120)  # Autofill in form
-    rating = models.IntegerField(max_length=2, choices=[
+    title = models.CharField(max_length=120, null=True,
+                             blank=True)  # Autofill in form
+    rating = models.IntegerField(choices=[
                                  (i, i) for i in range(1, 11)])  # Choice by user
     # Choice by user, default in form is none?
-    hue = models.CharField(max_length=20)
-    comment = models.CharField(max_length=200)  # User may comment
+    hue = models.CharField(max_length=20, null=True, blank=True)
+    comment = models.CharField(
+        max_length=200, null=True, blank=True)  # User may comment
     timestamp = models.DateTimeField(auto_now_add=True)
+
+    def get_absolute_url(self):
+        return reverse("ratings:ratings-home-redirect", kwargs={"aspect": self.title})

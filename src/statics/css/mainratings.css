@@ -21,3 +21,8 @@ float: right;
 	font-weight: bold;
 	/*margin-top: 20px;*/
 }
+
+#id_title, label[for="id_title"] {
+	position: absolute;
+	display: none
+}
