@@ -29,7 +29,7 @@ Now go to your browser to the server suggested (e.g. http://127.0.0.1:8000/)
 
 ### To-dos
 * ~~Model Aspects (e.g. shower, toilet, internet)~~
-* Model ratings (rate every aspects, hue's?)
+* ~~Model ratings (rate every aspects, hue's?)~~
 * ~~Single page ratings~~
 * ~~Display data interactively~~
 	* Fix resize lose data plotly issue?
@@ -52,4 +52,5 @@ Now go to your browser to the server suggested (e.g. http://127.0.0.1:8000/)
 	* Colour scheme
 	* Navbar
 	* Footer?
+	*~~SCSS compatible~~
 
