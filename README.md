@@ -53,4 +53,4 @@ Now go to your browser to the server suggested (e.g. http://127.0.0.1:8000/)
 	* Navbar
 	* Footer?
 	*~~SCSS compatible~~
-
+	* Ratings as exaple template

@@ -1,21 +1,71 @@
 {% extends 'base.html' %}
 {% block title %}ratethepauper - Ratings {% endblock %}
-
+{% load static %}
 
 {% block content %}
-{% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/mainratings.css' %}">
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <a href="#menu-toggle" class="menuopener" id="menu-toggle"><i class="fa fa-bars"></i></a>
+			
+            <div class="all-page-bar">
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-12 col-sm-12 col-md-12">
+							<div class="title title-1 text-center">
+								<div class="title--heading">
+									<h1>Ratings</h1>
+								</div>
+								<div class="clearfix"></div>
+								<ol class="breadcrumb">
+									<li><a href="/">Home</a></li>
+									<li class="active">Ratings</li>
+								</ol>
+								<div class="much">
+									<img src="{% static 'images/enforcement.png' %}" alt=""/>
+								</div>
+							</div>
+							<!-- .title end -->
+						</div>
+					</div>
+				</div>
+			</div><!-- end all-page-bar -->
 
-<div class="container">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/mainratings.css' %}">
 
 <p>This area holds aspects of living to rate. Click them and you can rate them and see their statistics.</p>
 
 
 <!-- HERE ARE ALL THE LIVING ASPECTS IMAGES -->
 {% include 'ratings_images.html' %}
-
-<!-- To not show stuff while loading... -->
-<div class="replace-this" style="width:2000px;height:2000px"> </div> 
 
 
 <!--  CONTAINER TO SHOW STATS PLOTLY! -->
@@ -26,7 +76,7 @@
 {% include 'ratings_form.html' %}
 
 
-
+</div> <!-- end page content wrapper -->
 
 {% load static %}
 <script src="{% static 'js/ratings_statsdiv.js' %}"></script>  
