@@ -575,7 +575,8 @@ body.barber_version .sidebar-nav li a.active{
 }
 
 .section.db {
-    background-color: #1f1f1f;
+    // background-color: #1f1f1f;
+    background-color: #2D2D2D !important;
 }
 
 .section.color1 {
@@ -2352,6 +2353,18 @@ body.barber_version .service-wrap:hover{
 	background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(254,254,253,0) 1%,rgba(188,158,84,1) 99%,rgba(187,157,82,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+,
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#bb9d52',GradientType=0 ); /* IE6-9 */
 }
+
+
+.hover-br-active {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(254,254,253,0) 1%, rgba(188,158,84,1) 99%, rgba(187,157,82,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(254,254,253,0) 1%,rgba(188,158,84,1) 99%,rgba(187,157,82,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(254,254,253,0) 1%,rgba(188,158,84,1) 99%,rgba(187,157,82,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+,
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#bb9d52',GradientType=0 ); /* IE6-9 */
+}
+
 
 body.barber_version .dev-list .widget:hover .hover-br .social-up-hover{
 	top: 0%;

@@ -11,7 +11,7 @@ for(i;i<navLinks.length;i++){
   if(lb[lb.length-1] == currentPage) {
    navLinks[i].className = "active";
    count += 1;
-   console.log(currentPage)
+   // console.log(currentPage)
   } 
 }
 if (count==0){

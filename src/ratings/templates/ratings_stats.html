@@ -3,17 +3,31 @@
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
 
+
+
 {% for aspect in LivingAspects %}
-<div id="stats-{{aspect.title}}" class="container replace-this {{aspect.title}} col-sm-11  col-xs-11 col-md-5" style="display: initial">
-  <div class="inner">{{aspect.title}} </div>
-  <div class="inner">You clicked{% you_clicked aspect.id %}</div>
+<div id="stats-{{aspect.title}}" class="parallax section db parallax-off replace-this {{aspect.title}} col-sm-11  col-xs-11 col-md-5" style="display: initial">
+                <div class="container-fluid">
+                    <div class="section-title row text-center">
+                        <div class="col-md-8 col-md-offset-2">
+                        <small>LET'S LOOK AT THE STATISTICS</small>
+                        <h3> {{aspect.title}} </h3>
+                        <hr class="grd1">
+                        <p class="lead">The first graph shows [melding per day].. graph on the right shows [histogram]. Next one shows comments.</p>
+                        </div>
+                    </div><!-- end title -->
+                </div> <!-- end container -->
 
-<!-- REMEMBER SET SIZE OF DIV RESPONSIVE -->
+                <div class="stats-container">
+	                    <div class="row">
+	                    	
+							{% autoescape off %}
+								{% get_plotly aspect.title %}
+							{% endautoescape %}
+                                <!-- end testimonial -->
+                    	</div><!-- end row -->
+                </div>
 
-{% autoescape off %}
-    {% get_plotly aspect.title %}
-{% endautoescape %}
-
-</div>
+            </div><!-- end section -->
 
 {% endfor %}

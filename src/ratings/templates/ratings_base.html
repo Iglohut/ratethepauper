@@ -61,16 +61,15 @@
 
 <link rel="stylesheet" type="text/css" href="{% static 'css/mainratings.css' %}">
 
-<p>This area holds aspects of living to rate. Click them and you can rate them and see their statistics.</p>
 
 
 <!-- HERE ARE ALL THE LIVING ASPECTS IMAGES -->
 {% include 'ratings_images.html' %}
 
 
-<!--  CONTAINER TO SHOW STATS PLOTLY! -->
-{% include 'ratings_stats.html' %}
 
+<!--  CONTAINER TO SHOW STATS PLOTLY! -->
+{% include 'ratings_stats.html' %} 
 
 <!--  SHOULD BE A FORM  AREA -->
 {% include 'ratings_form.html' %}
@@ -89,6 +88,10 @@
     	document.querySelectorAll("#stats-{{message}}").forEach(a=>a.style.display = "inline");
     	document.getElementById("{{message}}").style.backgroundColor = "#BC8F8F"
     	document.getElementById("form-{{message}}").remove();
+
+    	document.getElementById("card-{{message}}").className = "hover-br-active mycard"
+    	document.getElementById("stats-{{message}}").scrollIntoView();
+
     </script>
     {% endfor %}
 {% endif %}
