@@ -1,8 +1,102 @@
 {% extends 'base.html' %}
-
+{% load static %}
+{% load statistics_tags %}
 
 {% block content %}
-<h1>Hello world</h1>
-<!-- {{ request.user.is_authenticated }} -->
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <a href="#menu-toggle" class="menuopener" id="menu-toggle"><i class="fa fa-bars"></i></a>
+			
+            <div id="home" class="parallax first-section" data-stellar-background-ratio="0.4" style="background-image:url('{% static 'images/house-front.jpg' %}');">
+                <div class="container-fluid">
+                    <div class="row">
+						<div id="full-width" class="owl-carousel owl-theme">
+
+
+							<div class="text-center item">
+								<div class="col-md-8 col-md-offset-2 col-sm-12">
+									<div class="big-tagline text-center">
+										<h2><strong>ratethepauper</strong><br>
+										of our house</h2>
+										<p class="lead">With this website you can score certain aspects of our house and see their statistics live!</p>
+										<a href="/ratings" class="btn btn-light btn-radius btn-brd grd1 effect-1 butn">RATE NOW</a>
+									</div>
+								</div>
+							</div>
+
+
+						</div>
+                    </div><!-- end row -->
+                </div><!-- end container -->
+            </div><!-- end section -->
+           </div>	
+
+
+<div class="section wb">
+                <!-- <div class="container-fluid"> -->
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2 text-center">
+                            <div class="message-box">
+                                <h4>About</h4>
+                                <h2>Welcome to rathethepauper</h2>
+                                <p class="lead">We strive to fix things faster and make living even more comfortable!</p>
+
+                                <p> The main aim of this website is to have an overview of how well certain aspects of the house are functioning and maintained as judged by its residents. By rating these aspects (e.g. Internet speed, toilet cleanliness) we gather data and support for argumentation if something is faulty. We then have more collective support to urge our labdlord to fix things quicker.</p>
+
+                                <a href="/about" data-scroll class="btn btn-light btn-radius btn-brd grd1 effect-1">Learn More</a>
+                            </div><!-- end messagebox -->
+                        </div><!-- end col -->
+                    </div><!-- end row -->
+                <!-- </div> -->
+            </div>
+
+
+
+<div id="stats" class="parallax section db parallax-off col-sm-11  col-xs-11 col-md-5">
+                <div class="container-fluid">
+                    <div class="section-title row text-center">
+                        <div class="col-md-8 col-md-offset-2">
+                        <small>LET'S LOOK AT THE STATISTICS</small>
+                        <h3> STATISTICS</h3>
+                        <hr class="grd1">
+                        <p class="lead">These figures show the summary descriptive statistics of ratings from your fellow residents. The upper left pie chart shows what aspects are rated most. The upper right plot shows the mean ratings of each week per aspect. The lower left histogram shows all ratings for the this month. Lastly, the lower right figure shows a count of scores that are considered onvoldoende! </p>
+                        </div>
+                    </div><!-- end title -->
+                </div> <!-- end container -->
+
+                <div class="stats-container">
+	                    <div class="row">
+	                    	
+							{% autoescape off %}
+								{% get_plotly2 %}
+							{% endautoescape %}
+                                <!-- end testimonial -->
+                    	</div><!-- end row -->
+                </div>
+
+            </div><!-- end section -->
+
+
+
+
+
+<div id="grrr" class="container col-sm-12  col-xs-12 col-md-12 section wb" style="display: initial">
+<div class="container-fluid">
+		<div class="section-title row text-center">
+   			<div class="col-md-8 col-md-offset-2">
+    			<small>WHERE WE LIVE</small>
+    			<h3> LOCATION </h3>
+   			 </div class="google-div">
+   			    				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2465.0767257053!2d5.853999615782291!3d51.841294479691484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c7085d834cb569%3A0xc1eb8f39ce19215!2sVan%20Oldenbarneveltstraat%206%2C%206512%20AW%20Nijmegen!5e0!3m2!1snl!2snl!4v1571323726838!5m2!1snl!2snl" width="600" height="450" frameborder="1" style="border:1; width:100%;border-style:solid;border-width:medium" allowfullscreen=""></iframe>
+			</div><!-- end title -->
+</div>	
+</div>	
+
+
+
+
+
 
 {% endblock %}

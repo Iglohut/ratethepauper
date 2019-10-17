@@ -18,3 +18,14 @@
 	padding-right:1%;
 	padding-bottom: 60%;
 }
+
+
+#home {
+	background-repeat: no-repeat;
+	 background-size: 100% 70%; 
+}
+
+.google-div {
+	border-style: solid;
+	border-width: medium;
+}
