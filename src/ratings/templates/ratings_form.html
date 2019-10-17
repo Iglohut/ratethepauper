@@ -1,14 +1,98 @@
+{% load static %}
+
+
 {% for aspect in LivingAspects %}
-<div id="form-{{aspect.title}}" class="container replace-this {{aspect.title}} col-sm-11  col-xs-11 .col-md-7" style="display: none">
-	<p> You are now rating: {{aspect.title}} </p>
-<form method="POST" action="." enctype="multipart/form-data">
+<div id="form-{{aspect.title}}" class="container replace-this {{aspect.title}} col-sm-11  col-xs-11 .col-md-7 section lb" style="display: none">
+<div class="container-fluid">
+		<div class="section-title row text-center">
+   			<div class="col-md-8 col-md-offset-2">
+    			<small>RATE IT YOURSELF</small>
+    			<h3> {{aspect.title}} </h3>
+    			<hr class="grd1">
+   				<p class="lead">Herre you can pass your own judgement on the quality of the {{aspect.title}} aspect.</p>
+   			 </div>
+			</div><!-- end title -->
+
+
+<div class="contact_form">
+<form method="POST" action="." enctype="multipart/form-data" class="rating">
+
 	{% csrf_token %}
+	<fieldset class="row-fluid">
+
+		<div class='text-center'>
+			<p><label>Your Rating:</label></p>	
+			<span class="ratenumber">1</span>
+<span onmouseover="starmark(this)" onclick="starmark(this)" id="0one-{{aspect.title}}" style="font-size:40px;cursor:pointer;" class="fa fa-star"></span>
+<span onmouseover="starmark(this)" onclick="starmark(this)" id="1one-{{aspect.title}}"  style="font-size:40px;cursor:pointer;" class="fa fa-star"></span>
+<span onmouseover="starmark(this)" onclick="starmark(this)" id="2one-{{aspect.title}}"  style="font-size:40px;cursor:pointer;" class="fa fa-star "></span>
+<span onmouseover="starmark(this)" onclick="starmark(this)" id="3one-{{aspect.title}}"  style="font-size:40px;cursor:pointer;" class="fa fa-star "></span>
+<span onmouseover="starmark(this)" onclick="starmark(this)" id="4one-{{aspect.title}}"  style="font-size:40px;cursor:pointer;" class="fa fa-star"></span>
+<span onmouseover="starmark(this)" onclick="starmark(this)" id="5one-{{aspect.title}}"  style="font-size:40px;cursor:pointer;" class="fa fa-star"></span>
+<span onmouseover="starmark(this)" onclick="starmark(this)" id="6one-{{aspect.title}}"  style="font-size:40px;cursor:pointer;" class="fa fa-star"></span>
+<span onmouseover="starmark(this)" onclick="starmark(this)" id="7one-{{aspect.title}}"  style="font-size:40px;cursor:pointer;" class="fa fa-star"></span>
+<span onmouseover="starmark(this)" onclick="starmark(this)" id="8one-{{aspect.title}}"  style="font-size:40px;cursor:pointer;" class="fa fa-star"></span>
+<span onmouseover="starmark(this)" onclick="starmark(this)" id="9one-{{aspect.title}}"  style="font-size:40px;cursor:pointer;" class="fa fa-star"></span>
+<span class="ratenumber">10</span>
+  </div>
 
 	{{form.as_p}}
-
 	<p><label class="always-show" for="id_title">Title:</label> <input type="text" name="title" maxlength="120" required="" id="id_title" value='{{ aspect.title }}'></p> <!-- # Dirty trick to fill in which title.. -->
 
-	<input type="submit" value='Save'>
+	 <div class="btn-submission">
+	  <button type="submit" value="SEND" id="submit" class="btn btn-light btn-radius btn-brd grd1 btn-block subt">SUBMIT YOUR RATING</button>
+	</div>	
+	 </fieldset>
 </form>
-</div>	
+</div> <!-- contact_form -->
+
+
+</div><!-- end container -->
+</div>	<!-- display div -->
 {% endfor %}
+
+
+
+
+<script type="text/javascript">
+	document.querySelectorAll('input').forEach(function(el, i){
+		if (el.name  != 'title'){
+  el.id = i;
+  el.classList.add('form-control');
+}
+});
+
+
+document.querySelectorAll('input').forEach(function(el, i){
+		if (el.name  == 'rating'){
+  el.id = i;
+  el.style.display = "none";
+
+}
+});
+
+
+
+function starmark(item){
+var count;
+var n_stars = 10
+count=item.id[0];
+sessionStorage.starRating = count;
+var subid= item.id.substring(1);
+for(var i=0;i<n_stars;i++){
+if(i<count){
+document.getElementById(('0')+subid).style.color="orange";
+document.getElementById((i+1)+subid).style.color="orange";
+var rating = Number(count) +1
+
+document.querySelectorAll('input').forEach(function(el, i){
+		if (el.name  == 'rating'){
+  el.id = i;
+  el.value = rating
+
+}});}
+else{
+document.getElementById((i+1)+subid).style.color="black";
+}}}
+
+</script>

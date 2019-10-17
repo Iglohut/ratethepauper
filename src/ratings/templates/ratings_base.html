@@ -2,6 +2,7 @@
 {% block title %}ratethepauper - Ratings {% endblock %}
 {% load static %}
 
+
 {% block content %}
         <!-- Page Content -->
         <div id="page-content-wrapper">
@@ -33,39 +34,12 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	<!-- Latest compiled JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
-
 <link rel="stylesheet" type="text/css" href="{% static 'css/mainratings.css' %}">
 
 
 
 <!-- HERE ARE ALL THE LIVING ASPECTS IMAGES -->
 {% include 'ratings_images.html' %}
-
 
 
 <!--  CONTAINER TO SHOW STATS PLOTLY! -->
@@ -77,7 +51,7 @@
 
 </div> <!-- end page content wrapper -->
 
-{% load static %}
+
 <script src="{% static 'js/ratings_statsdiv.js' %}"></script>  
 <script type="text/javascript">document.getElementById("form-Example").remove();</script>
 
@@ -85,16 +59,16 @@
 {% if messages %}
     {% for message in messages %}
     <script type="text/javascript">
+    	console.log("{{message}}")
     	document.querySelectorAll("#stats-{{message}}").forEach(a=>a.style.display = "inline");
-    	document.getElementById("{{message}}").style.backgroundColor = "#BC8F8F"
     	document.getElementById("form-{{message}}").remove();
 
     	document.getElementById("card-{{message}}").className = "hover-br-active mycard"
     	document.getElementById("stats-{{message}}").scrollIntoView();
-
     </script>
     {% endfor %}
 {% endif %}
+
 
 
 {% endblock %}

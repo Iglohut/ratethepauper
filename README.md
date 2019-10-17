@@ -36,21 +36,20 @@ Now go to your browser to the server suggested (e.g. http://127.0.0.1:8000/)
 	* Display the real data
 	* Display comments
 
-* Form
+* Forms
 	* ~~Aspects~~
-	* subchoices (internet:wifi): remove this idea, keeping it simpler?
 	* ~~Generalize from Aspects~~
 	* ~~Autoupdate plots on submit~~
+	* Contact form model
 
 * Homepage
-    * Stats of all models
+    * Stats of all models (choose wisely..)
 	* Introduction to what is this website
 	* Google maps to the house
 	* More?
 
 * Overall styling
-	* Colour scheme
-	* Navbar
-	* Footer?
+	* ~~Colour scheme~~
+	* ~~Navbar~~
+	* ~~Footer~~
 	*~~SCSS compatible~~
-	* Ratings as exaple template

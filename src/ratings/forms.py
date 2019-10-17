@@ -7,6 +7,11 @@ from .models import (
 
 
 class RatingForm(forms.ModelForm):
+    comment = forms.CharField(label='', required=False, widget=forms.TextInput(
+        attrs={"placeholder": "Explain thyself... (optional)"}))
+
+    rating = forms.IntegerField(label='')
+
     class Meta:
         model = AspectRatings
-        fields = ['title', 'rating', 'hue', 'comment']
+        fields = ['title', 'rating', 'comment']

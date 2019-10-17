@@ -73,8 +73,11 @@ class LivingAspects(models.Model):
 class AspectRatings(models.Model):
     title = models.CharField(max_length=120, null=True,
                              blank=True)  # Autofill in form
-    rating = models.IntegerField(choices=[
-                                 (i, i) for i in range(1, 11)])  # Choice by user
+    # rating = models.IntegerField(choices=[
+    #                              (i, i) for i in range(1, 11)])  # Choice by user
+
+    rating = models.IntegerField(null=True, blank=True)  # Choice by user
+
     # Choice by user, default in form is none?
     hue = models.CharField(max_length=20, null=True, blank=True)
     comment = models.CharField(

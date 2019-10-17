@@ -5,3 +5,16 @@
 	margin-left: 8%;
 	margin-right: 8%;
 }
+
+.btn-submission {
+	padding-left: 30%;
+	padding-right: 30%;
+}
+
+
+.ratenumber {
+	font-size: 1.5em !important;
+	padding-left: 1%;
+	padding-right:1%;
+	padding-bottom: 60%;
+}
