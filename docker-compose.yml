@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  database:
+    restart: unless-stopped
+    image: postgres:10.1-alpine
+    volumes:
+      # This saves the database to a persistent volume:
+      - postgres:/var/lib/postgresql/data
+      # You could also save it locally to the `database` directory...
+      # - ./database:/var/lib/postgresql/data
+      # if ever we want to initialise the database
+      # - ./demo.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      #TODO only works without quotes here, not sure why
+      - 5432   # database port
+
+  web:
+    env_file:
+      - ./.env.sample # <-- replace this with .env in production
+    build: .
+    volumes:
+      - .:/code
+    command: ./bin/docker-command.bash
+    ports:
+      - "8000:8000"
+      - "35729:35729"   # django live reload server
+    depends_on:
+      - database
+
+volumes:
+  postgres:
