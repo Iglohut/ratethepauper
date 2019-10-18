@@ -36,17 +36,24 @@ Now go to your browser to the server suggested (e.g. http://127.0.0.1:8000/)
 	* Display the real data
 	* Display comments
 
-* Forms
+* ~~Forms~~
 	* ~~Aspects~~
 	* ~~Generalize from Aspects~~
 	* ~~Autoupdate plots on submit~~
-	* Contact form model
+	* ~~Contact form model~~
 
 * Homepage
     * Stats of all models (choose wisely..)
 	* ~~Introduction to what is this website~~
 	* ~~Google maps to the house~~
 	* More?
+
+* About page
+	* What is this
+	* Goal: utilities; landlord detect, residents argue
+	* low threshold of making remarks
+	* Who am I-ish
+	* Wanna contribute? GitHub or Contactpage
 
 * Overall styling
 	* ~~Colour scheme~~

@@ -21,14 +21,16 @@ from django.conf.urls.static import static
 from pages.views import (
     home_view,
     contact_view,
-    about_view
+    about_view,
+    ContactView
 )  # Import pages that ar enot really apps
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('', home_view, name='home'),
-    path('contact/', contact_view, name='contact'),
+    path('contact/', ContactView.as_view(), name='contact'),
     path('about/', about_view, name='about'),
 
     path('ratings/', include('ratings.urls')),

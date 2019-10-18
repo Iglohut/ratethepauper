@@ -45,6 +45,12 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/custom.css' %}">
 
+{% compress css %}
+          <!-- Custom SCSS -->
+    <link type="text/x-scss" rel="stylesheet" href="{% static 'scss/custom.scss' %}" media="screen">
+{% endcompress %}
+
+
 </head>
 
 

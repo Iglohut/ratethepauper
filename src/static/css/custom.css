@@ -22,14 +22,10 @@
 
 #home {
 	background-repeat: no-repeat;
-	 background-size: 100% 70%; 
+	 background-size: 100% 100%; 
 }
 
 .google-div {
 	border-style: solid;
 	border-width: medium;
-}
-
-body {
-	background-color: #f2f3f5 !important;
 }
