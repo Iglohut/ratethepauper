@@ -7,12 +7,15 @@ This is a hobby project aimed at making a website where residents of my house ca
 You can test the website on your computer locally. 
 ##### Ubuntu 18.04.3 LTS
 
+
 First clone this repository in your favourite directory. 
 ```sh
 $ cd Documents/Github
 $ git clone https://github.com/Iglohut/ratethepauper.git
 ```
 
+
+**Using conda**
 Create a virtualenvironment using conda.
 ```sh
 $ cd ratethepauper
@@ -25,7 +28,15 @@ $ conda activate ratethepauper
 $ cd ../src
 $ python manage.py runserver
 ```
-Now go to your browser to the server suggested (e.g. http://127.0.0.1:8000/)
+
+**Using Docker**
+```sh
+$ cd ratethepauper
+$ docker-compose up
+```
+
+Now go to your browser to the server suggested (e.g. http://127.0.0.1:8000/ or http://0.0.0.0:8000/)
+
 
 ### To-dos
 * ~~Model Aspects (e.g. shower, toilet, internet)~~
