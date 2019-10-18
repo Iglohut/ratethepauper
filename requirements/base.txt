@@ -1,0 +1,12 @@
+Django==2.1.10
+django-appconf==1.0.3
+django-compressor==2.3
+django-libsass==0.7
+libsass==0.19.3
+matplotlib==3.1.1
+pandas==0.25.1
+plotly==4.1.1
+psycopg2-binary==2.8.2
+pillow==6.2.0
+rcssmin==1.0.6
+rjsmin==1.1.0
