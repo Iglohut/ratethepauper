@@ -1,0 +1,11 @@
+/* line 1, src/statics/scss/custom.scss */
+.all-page-bar-contact {
+  background: url("/static/images/waalbrug-bg.jpg?1e00143ebb16") no-repeat center;
+  background-size: 100% 100%;
+  position: relative; }
+
+/* line 9, src/statics/scss/custom.scss */
+.all-page-bar-about {
+  background: url("/static/images/lecturehall-bg.jpg") no-repeat center;
+  background-size: 100% 100%;
+  position: relative; }

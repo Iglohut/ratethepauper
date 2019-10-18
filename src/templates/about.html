@@ -1,39 +1,123 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
 
-This website is going to be for rating aspects of the house at van olde...
+ <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <a href="#menu-toggle" class="menuopener" id="menu-toggle"><i class="fa fa-bars"></i></a>
+			
+            <div class="all-page-bar all-page-bar-about">
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-12 col-sm-12 col-md-12">
+							<div class="title title-1 text-center">
+								<div class="title--heading">
+									<h1>About</h1>
+								</div>
+								<div class="clearfix"></div>
+								<ol class="breadcrumb">
+									<li><a href="/">Home</a></li>
+									<li class="active">About</li>
+								</ol>
+								<div class="much">
+									<img src="{% static 'images/professor.png' %}" style="width:20%" alt=""/>
+								</div>
+							</div>
+							<!-- .title end -->
+						</div>
+					</div>
+				</div>
+			</div><!-- end all-page-bar -->
 
-<h1>Hello world</h1>
-<!-- {{ request.user.is_authenticated }} -->
-<p> This is a template</p>	
+            <section class="section nopad cac text-center">
+                <a href="/ratings"><h3>Get started with the ratings!</h3></a>
+            </section>
 
+            <div class="section wb">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2 text-center">
+                            <div class="message-box">
+                                <h4>Overview</h4>
+                                <h2>What is this website?</h2>
+                                <p class="lead">My aim is or us all to live comfortably</p>
 
-<!-- CONTEXT DICTIONARIES! -->
-<p>
-	{{ my_number }},
-	{{ my_text }},
-	{{ my_list }}
-</p>
+                                <p> This website is intended to be used by residents of van Oldenbarneveldstraat 6 and its sub-houses on that street. You can rate aspects (e.g. internet, showers, noise) of our house that are supposed to be well maintained by our landlord. These ratings are depicted with figures to show statistics of how a certain aspect is doing. These statistics can then be usd by our landlord for early detection of faulty apsects. Are there many low ratings for internet this week? Must be a sign! Furthermore, we can use the power of numbers to argue that something is wrong to our landlord. </p>
+                            </div><!-- end messagebox -->
+                        </div><!-- end col -->
+                    </div><!-- end row -->
+					
+					<hr class="hr1"> 
+					
+					<div class="row">
+						<div class="col-md-12">
+							<div class="about-tab">
+								<ul class="nav nav-tabs">
+									<li class="active"><a href="#tab_a" data-toggle="tab">Our Mission</a></li>
+									<li><a href="#tab_b" data-toggle="tab">Why Us?</a></li>
+									<li><a href="#tab_c" data-toggle="tab">About Us</a></li>								
+								</ul>
+								<div class="tab-content">
+									<div class="tab-pane fade in active" id="tab_a">
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi scelerisque tortor mi, eget mattis velit sagittis id. Duis ornare mauris eu eros interdum, vitae finibus arcu ultricies. Donec vitae felis eleifend, dignissim erat a, pretium diam. Donec eu massa odio. Suspendisse et ornare lacus, pharetra imperdiet ligula.</p>
+										<p>Vestibulum ac quam id lorem semper condimentum. Nulla vel ligula turpis. Nullam luctus, mi nec rhoncus gravida, tortor est semper purus, a feugiat sapien odio non urna. Fusce pellentesque neque ut nisi rhoncus imperdiet. Sed eu purus vel turpis consectetur convallis. Donec a dolor tellus. Phasellus dignissim erat nec ipsum condimentum sollicitudin. </p>
+									</div>
+									<div class="tab-pane fade" id="tab_b">
+										<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+										<ul>
+											<li><i class="fa fa-circle-o" aria-hidden="true"></i>User Experince</li>
+											<li><i class="fa fa-circle-o" aria-hidden="true"></i>Full Devices</li>
+											<li><i class="fa fa-circle-o" aria-hidden="true"></i>Awesome Design</li>
+											<li><i class="fa fa-circle-o" aria-hidden="true"></i>Visual Impact</li>
+											<li><i class="fa fa-circle-o" aria-hidden="true"></i>100% Sincronized</li>
+											<li><i class="fa fa-circle-o" aria-hidden="true"></i>Custom Support</li>
+										</ul>
+									</div>
+									<div class="tab-pane fade" id="tab_c">
+										<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+									</div>
+								</div><!-- tab content -->
+							</div>
+						</div><!-- end col -->
+					</div><!-- end row -->
+					
+                    <hr class="hr1"> 
 
-<ul>
-	<li>item 1</li>
-	<li>item 2</li>
-</ul>
+                    <div class="row text-center">
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                           <div class="service-widget">
+                                <div class="post-media wow fadeIn">
+                                    <a href="uploads/barber_01.jpg" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
+                                    <img src="uploads/barber_01.jpg" alt="" class="img-responsive img-rounded">
+                                </div>
+                                <h3>Show us Your Graft Style</h3>
+                                <p>Aliquam sagittis ligula et sem lacinia, ut facilisis enim sollicitudin. Proin nisi est, convallis nec purus vitae, iaculis posuere sapien. Cum sociis natoque.</p>
+                            </div><!-- end service -->
+                        </div>
 
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="service-widget">
+                                <div class="post-media wow fadeIn">
+                                    <a href="uploads/barber_02.jpg" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
+                                    <img src="uploads/barber_02.jpg" alt="" class="img-responsive img-rounded">
+                                </div>
+                                <h3>Outstanding Barber Shop</h3>
+                                <p>Duis at tellus at dui tincidunt scelerisque nec sed felis. Suspendisse id dolor sed leo rutrum euismod. Nullam vestibulum fermentum erat. It nam auctor. </p>
+                            </div><!-- end service -->
+                        </div>
 
-<!-- FOR LOOP OVER LIST CONTEXT  -->
-<ul>
-{% for my_sub_item in my_list %}
-	{% if my_sub_item == 487 %}
-	<li> {{ forloop.counter }} - {{ my_sub_item|add:22}} </li>
-	{% elif abc == "Gotcha!" %}
-	<li>{{ forloop.counter }} - {{ my_sub_item}}</li>
-	{% else %}
-	<li>{{ forloop.counter }} - {{ my_sub_item}}</li>
-	{% endif %}
-{% endfor %}
-</ul>
-
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="service-widget">
+                                <div class="post-media wow fadeIn">
+                                    <a href="uploads/barber_03.jpg" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
+                                    <img src="uploads/barber_03.jpg" alt="" class="img-responsive img-rounded">
+                                </div>
+                                <h3>The Barber Materials</h3>
+                                <p>Etiam materials ut mollis tellus, vel posuere nulla. Etiam sit amet lacus vitae massa sodales aliquam at eget quam. Integer ultricies et magna quis posuere.</p>
+                            </div><!-- end service -->
+                        </div>
+                    </div><!-- end row -->
+                </div><!-- end container -->
+            </div><!-- end section -->
 
 {% endblock %}
