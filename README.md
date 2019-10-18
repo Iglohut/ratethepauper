@@ -16,6 +16,7 @@ $ git clone https://github.com/Iglohut/ratethepauper.git
 
 
 **Using conda**
+
 Create a virtualenvironment using conda.
 ```sh
 $ cd ratethepauper
