@@ -27,7 +27,7 @@ Activate the environment and run the server:
 ```sh
 $ conda activate ratethepauper
 $ cd ../src
-$ python manage.py runserver
+$ python manage.py runserver --insecure
 ```
 
 **Using Docker**
