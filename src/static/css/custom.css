@@ -1,10 +1,10 @@
 
 /** ADD YOUR AWESOME CODES HERE **/
-
+@media (min-width: 500px) {
 .stats-container {
 	margin-left: 8%;
 	margin-right: 8%;
-}
+}}
 
 .btn-submission {
 	padding-left: 30%;
