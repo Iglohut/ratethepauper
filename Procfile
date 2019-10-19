@@ -1,1 +1,1 @@
-web: gunicorn myproject.wsgi
+web: gunicorn --pythonpath src ratethepauper.wsgi
