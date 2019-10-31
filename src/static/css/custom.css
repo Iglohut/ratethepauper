@@ -7,8 +7,8 @@
 }}
 
 .btn-submission {
-	padding-left: 30%;
-	padding-right: 30%;
+	padding-left: 10%;
+	padding-right: 10%;
 }
 
 
@@ -28,4 +28,33 @@
 .google-div {
 	border-style: solid;
 	border-width: medium;
+}
+
+@media (max-width: 800px) {
+	#location-maps {
+		height: 100%;
+	}
+}
+
+
+@media (max-width: 1040px) {
+	span {
+	font-size: 100% !important;
+}
+
+.ratenumber {
+	font-size: 0.7em !important;
+}
+
+}
+
+@media (max-width: 354px) {
+		span {
+	font-size: 80% !important;
+}
+
+.ratenumber {
+	font-size: 0.7em !important;
+}
+
 }
