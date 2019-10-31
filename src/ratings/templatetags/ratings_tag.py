@@ -14,13 +14,13 @@ import plotly.express as px
 
 def colify_div(div):
   # Making bootstrap compatible div
-  div = '<div class="col-sm-11  col-xs-11 col-md-6">' + div
+  div = '<div class="col-sm-12  col-xs-12 col-md-6">' + div
   div += "</div>"
   return div
 
 
 def plot_histogram(x, my_title):
-  layout = {"title": {"text": "Paupergram of " + my_title, 'xref': "paper"},
+  layout = {"title": {"text": "Paupergram of " + my_title, 'xref': "container"},
             "font": dict(family='Montserrat', size=16, color='white'),
             "plot_bgcolor": "rgb(30,30,30)",
             "paper_bgcolor": "hsl(0, 0, 18)",
@@ -63,7 +63,7 @@ def plot_histogram(x, my_title):
 
 
 def plotly_lineplot(x, y, title, ylabel, xlabel, linecolor):
-  layout = {"title": {"text": title, 'xref': "paper"},
+  layout = {"title": {"text": title, 'xref': "container"},
             "font": dict(family='Montserrat', size=16, color='white'),
             "plot_bgcolor": "rgb(30,30,30)",
             "paper_bgcolor": "hsl(0, 0, 18)",
@@ -105,7 +105,7 @@ def get_plotly(my_title):
   random_x = list(range(1, N + 1))
   random_y0 = np.random.randint(low=1, high=10, size=N)
 
-  div += plotly_lineplot(random_x, random_y0, title="Paupermean's per week for " +
+  div += plotly_lineplot(random_x, random_y0, title="Paupermeans of " +
                          my_title, ylabel='Mean Rating', xlabel='Week', linecolor='red')
 
   return div

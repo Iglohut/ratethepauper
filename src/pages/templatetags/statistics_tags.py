@@ -18,7 +18,7 @@ def total_post():
 
 @register.simple_tag
 def get_plotly2():
-  layout = {"title": {"text": "Aspects Rated", 'xref': "paper"},
+  layout = {"title": {"text": "Aspects Rated", 'xref': "container"},
             "font": dict(family='Montserrat', size=16, color='white'),
             "plot_bgcolor": "rgb(30,30,30)",
             "paper_bgcolor": "hsl(0, 0, 18)",
