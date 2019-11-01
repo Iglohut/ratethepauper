@@ -61,7 +61,7 @@
                         <small>LET'S LOOK AT THE STATISTICS</small>
                         <h3> STATISTICS</h3>
                         <hr class="grd1">
-                        <p class="lead">These figures show the summary descriptive statistics of ratings from your fellow residents. The upper left pie chart shows what aspects are rated most. The upper right plot shows the mean ratings of each week per aspect. The lower left histogram shows all ratings for the this month. Lastly, the lower right figure shows a count of scores that are considered onvoldoende! </p>
+                        <p class="lead">These figures show the summary descriptive statistics of ratings from your fellow residents. The most pper figure shows the mean score for each aspect. The middle left pie chart shows what aspects are rated most. The middle right plot shows the mean ratings of each week per aspect. The lower left histogram shows all ratings for the this month. Lastly, the lower right figure shows a count of scores that are considered onvoldoende! </p>
                         </div>
                     </div><!-- end title -->
                 </div> <!-- end container -->
@@ -70,7 +70,8 @@
 	                    <div class="row">
 	                    	
 							{% autoescape off %}
-								{% get_plotly2 %}
+								<!-- {% get_plotly2 %} -->
+                                {% plot_statistics %}
 							{% endautoescape %}
                                 <!-- end testimonial -->
                     	</div><!-- end row -->

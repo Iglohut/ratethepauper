@@ -12,10 +12,15 @@ import plotly.graph_objects as go
 import plotly.express as px
 
 
-def colify_div(div):
+def colify_div(div, size='half'):
   # Making bootstrap compatible div
-  div = '<div class="col-sm-12  col-xs-12 col-md-6">' + div
-  div += "</div>"
+  if size=='half':
+    div = '<div class="col-sm-12  col-xs-12 col-md-6">' + div
+    div += "</div>"
+  else:
+    div = '<div class="col-sm-12  col-xs-12 col-md-12">' + div
+    div += "</div>"
+
   return div
 
 
