@@ -92,7 +92,7 @@ def get_plotly2():
   fig.update_layout(layout)
 
   div += colify_div(plotly.offline.plot(fig,
-                                        include_plotlyjs=False, output_type='div'))
+                                        include_plotlyjs=False, output_type='div', validate=False))
 
   return div
 
