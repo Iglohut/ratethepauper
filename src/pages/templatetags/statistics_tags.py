@@ -13,6 +13,7 @@ from django_pandas.io import read_frame
 from ratings.models import AspectRatings
 import datetime
 import copy
+import time
 
 register = template.Library()
 
@@ -122,7 +123,8 @@ class DataPlotler:
     values = list(self.df['title'].value_counts())
     labels = self.df['title'].value_counts().index.values
 
-    fig = go.Figure(data=[go.Pie(labels=labels, values=values)], layout=layout)
+    data = data=[go.Pie(labels=labels, values=values)]
+    fig = dict(data=data, layout=layout)
 
     self._make_div(fig)
 
@@ -142,19 +144,21 @@ class DataPlotler:
     df['week'] = df.apply(
         lambda row: row.name.isocalendar()[1], axis=1).astype('float')
 
-    # Make the figure
-    fig = go.Figure(layout=layout)
     # So it is ordered by count
+    data =[]
     for title_i in self.df['title'].value_counts().index.values:
       df_title_weekmeans = df[df['title'] == title_i].groupby(
           'week', as_index=True)['rating'].mean()
 
       weeks = df_title_weekmeans.index.values
       means = list(df_title_weekmeans)
-      fig.add_trace(go.Scatter(x=weeks, y=means,
+
+      data.append(go.Scatter(x=weeks, y=means,
                                mode='lines+markers',
                                name=title_i,
                                ))
+
+    fig = dict(data=data, layout=layout)
 
     self._make_div(fig)
 
@@ -176,14 +180,17 @@ class DataPlotler:
 
     df = self.df.loc[datem:today]
 
-    fig = go.Figure(layout=layout)
+    # fig = go.Figure(layout=layout)
+    data = []
     for title_i in self.df['title'].value_counts().index.values:
       df_titleratings = list(df[df['title'] == title_i]['rating'])
 
-      fig.add_trace(go.Histogram(x=df_titleratings,
-                                 name=title_i, marker=marker))
+      data.append(go.Histogram(x=df_titleratings,
+                                 name=title_i, marker=marker, opacity=0.75))
 
-    fig.update_traces(opacity=0.75)
+    fig = dict(data=data, layout=layout)
+
+    # fig.update_traces(opacity=0.75)
     self._make_div(fig)
 
   def plot_onvoldoendes(self, title, N_days=10):
@@ -201,8 +208,8 @@ class DataPlotler:
     values = list(df['title'].value_counts())
     labels = df['title'].value_counts().index.values
 
-    fig = go.Figure([go.Bar(x=labels, y=values)])
-    fig.update_layout(layout)
+    data = [go.Bar(x=labels, y=values)]
+    fig = dict(data=data, layout=layout)
 
     self._make_div(fig)
 
@@ -218,9 +225,7 @@ class DataPlotler:
     df_means_onvoldoende = df_means[df_means < 5.6]
     df_means_voldoende = df_means[df_means >= 5.6]
 
-    # Plot
-    fig = go.Figure()
-    fig.add_trace(go.Bar(
+    trace1 = go.Bar(
         y=list(df_means_onvoldoende.index.values),
         x=list(df_means_onvoldoende),
         name='Onvoldoende!',
@@ -229,8 +234,9 @@ class DataPlotler:
             color='rgba(246, 78, 139, 0.6)',
             line=dict(color='rgba(246, 78, 139, 1.0)', width=3)
         )
-    ))
-    fig.add_trace(go.Bar(
+    )
+
+    trace2 = go.Bar(
         y=df_means_voldoende.index.values,
         x=list(df_means_voldoende),
         name='Voldoende!',
@@ -239,13 +245,10 @@ class DataPlotler:
             color='rgba(0, 100, 0, 0.6)',
             line=dict(color='rgba(0, 100, 0, 1.0)', width=3)
         )
-    ))
+    )
+    data = [trace1, trace2]
 
-    fig.update_layout(layout)
-
-    # Red onvoldoende bar
-    fig.update_layout(
-        shapes=[
+    redline = {'shapes': [
             # Line Vertical
             go.layout.Shape(
                 type="line",
@@ -257,19 +260,16 @@ class DataPlotler:
                     color="red",
                     width=4
                 )
-            )],
-        xaxis=dict(
-            tickmode='linear',
-            tick0=0,
-            dtick=1
-        )
-    )
+            )]}
 
+    layout.update(redline)
+
+    fig = dict(data=data, layout=layout)
     self._make_div(fig, size='full')
 
   def _make_div(self, fig, size='half'):
     div = colify_div(plotly.offline.plot(
-        fig, include_plotlyjs=False, output_type='div'), size=size)
+        fig, include_plotlyjs=False, output_type='div', validate=False), size=size)
     self.div += div
 
   @property
