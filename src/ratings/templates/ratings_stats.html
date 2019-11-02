@@ -13,7 +13,7 @@
                         <small>LET'S LOOK AT THE STATISTICS</small>
                         <h3> {{aspect.title}} </h3>
                         <hr class="grd1">
-                        <p class="lead">The left figure shows all ratings of {{aspect.title}} over time. The right graph shows the mean rating per week.</p>
+                        <p class="lead">The first figure shows the mean rating and our judgement. The paupergram figure shows all ratings of {{aspect.title}} over time, with the vertical red line being the mean. The last graph shows the mean rating per week.</p>
                         </div>
                     </div><!-- end title -->
                 </div> <!-- end container -->
@@ -21,7 +21,7 @@
                 <div class="stats-container">
 	                    <div class="row">
 	                    	
-							{% autoescape off %}
+						{% autoescape off %}
 								{% get_plotly aspect.title %}
 							{% endautoescape %}
                                 <!-- end testimonial -->

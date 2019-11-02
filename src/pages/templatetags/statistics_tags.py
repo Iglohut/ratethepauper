@@ -123,7 +123,7 @@ class DataPlotler:
     values = list(self.df['title'].value_counts())
     labels = self.df['title'].value_counts().index.values
 
-    data = data=[go.Pie(labels=labels, values=values)]
+    data = data = [go.Pie(labels=labels, values=values)]
     fig = dict(data=data, layout=layout)
 
     self._make_div(fig)
@@ -145,7 +145,7 @@ class DataPlotler:
         lambda row: row.name.isocalendar()[1], axis=1).astype('float')
 
     # So it is ordered by count
-    data =[]
+    data = []
     for title_i in self.df['title'].value_counts().index.values:
       df_title_weekmeans = df[df['title'] == title_i].groupby(
           'week', as_index=True)['rating'].mean()
@@ -154,9 +154,9 @@ class DataPlotler:
       means = list(df_title_weekmeans)
 
       data.append(go.Scatter(x=weeks, y=means,
-                               mode='lines+markers',
-                               name=title_i,
-                               ))
+                             mode='lines+markers',
+                             name=title_i,
+                             ))
 
     fig = dict(data=data, layout=layout)
 
@@ -186,7 +186,7 @@ class DataPlotler:
       df_titleratings = list(df[df['title'] == title_i]['rating'])
 
       data.append(go.Histogram(x=df_titleratings,
-                                 name=title_i, marker=marker, opacity=0.75))
+                               name=title_i, marker=marker, opacity=0.75))
 
     fig = dict(data=data, layout=layout)
 
@@ -249,18 +249,19 @@ class DataPlotler:
     data = [trace1, trace2]
 
     redline = {'shapes': [
-            # Line Vertical
-            go.layout.Shape(
-                type="line",
-                x0=5.6,
-                y0=-1,
-                x1=5.6,
-                y1=len(df_means),
-                line=dict(
-                    color="red",
-                    width=4
-                )
-            )]}
+        # Line Vertical
+        go.layout.Shape(
+            type="line",
+            x0=5.6,
+            y0=-1,
+            x1=5.6,
+            y1=len(df_means),
+            line=dict(
+                color="red",
+                width=4
+            )
+        )],
+        'margin': dict(l=120, r=10, t=140, b=80)}
 
     layout.update(redline)
 
