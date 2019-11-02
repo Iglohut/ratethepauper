@@ -63,3 +63,14 @@
 	body {
 	zoom: 80%;
 }}
+
+
+
+
+.wrapperr {
+  position: relative;
+}
+.infoi {
+  position: absolute;
+  width: 100%;
+}

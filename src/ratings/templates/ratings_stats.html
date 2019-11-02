@@ -4,9 +4,10 @@
 
 
 
-
+<div class="wrapper">
 {% for aspect in LivingAspects %}
-<div id="stats-{{aspect.title}}" class="parallax section db parallax-off replace-this {{aspect.title}} col-sm-11  col-xs-11 col-md-5" style="display: initial">
+<div class='infoi'>
+<div id="stats-{{aspect.title}}" class="parallax section db parallax-off replace-this {{aspect.title}} col-sm-11  col-xs-11 col-md-5" style="visibility:hidden;overflow:hidden">
                 <div class="container-fluid">
                     <div class="section-title row text-center">
                         <div class="col-md-8 col-md-offset-2">
@@ -29,5 +30,6 @@
                 </div>
 
             </div><!-- end section -->
-
+<!-- </div>   -->
 {% endfor %}
+</div>  

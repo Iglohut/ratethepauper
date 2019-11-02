@@ -45,8 +45,8 @@ Now go to your browser to the server suggested (e.g. http://127.0.0.1:8000/ or h
 * ~~Model ratings (rate every aspects, hue's?)~~
 * ~~Single page ratings~~
 * ~~Display data interactively~~
-	* Fix resize lose data plotly issue?
-	* Display the real data
+	* ~~Fix resize lose data plotly issue~~
+	* ~~Display the real data~~
 	* Display comments
 
 * ~~Forms~~
@@ -67,4 +67,4 @@ Now go to your browser to the server suggested (e.g. http://127.0.0.1:8000/ or h
 	* ~~Navbar~~
 	* ~~Footer~~
 	*~~SCSS compatible~~
-	* Mobile
+	* ~~Mobile~~

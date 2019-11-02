@@ -60,11 +60,14 @@
     {% for message in messages %}
     <script type="text/javascript">
     	console.log("{{message}}")
-    	document.querySelectorAll("#stats-{{message}}").forEach(a=>a.style.display = "inline");
+    	document.querySelectorAll("#stats-Example").forEach(a=>a.style.visibility = "hidden");
+    	document.querySelectorAll("#stats-{{message}}").forEach(a=>a.style.visibility = "visible");
     	document.getElementById("form-{{message}}").remove();
 
     	document.getElementById("card-{{message}}").className = "hover-br-active mycard"
     	document.getElementById("stats-{{message}}").scrollIntoView();
+
+    	document.getElementById("card-Example").className = "hover-br mycard";
     </script>
     {% endfor %}
 {% endif %}
