@@ -25,6 +25,12 @@ SECRET_KEY = 'gh&3n9fq9%m9ari73g)!)*4m4gh&$=!zq7z#pulz1(tkouuyt5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# PRODUCTION Safety
+# SECURE_CONTENT_TYPE_NOSNIFF = False
+# SECURE_SSL_REDIRECT = False
+# CSRF_COOKIE_SECURE = False
+# SESSION_COOKIE_SECURE = False
+
 ALLOWED_HOSTS = ['0.0.0.0', 'ratethepauper.herokuapp.com', 'ratethepauper.nl']
 
 

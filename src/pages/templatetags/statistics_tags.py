@@ -239,7 +239,7 @@ class DataPlotler:
     trace2 = go.Bar(
         y=df_means_voldoende.index.values,
         x=list(df_means_voldoende),
-        name='Voldoende!',
+        name='Voldoende',
         orientation='h',
         marker=dict(
             color='rgba(0, 100, 0, 0.6)',
