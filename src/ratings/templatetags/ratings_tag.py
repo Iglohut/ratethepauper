@@ -158,6 +158,8 @@ def get_plotly(my_title):
 
   else:
     qs = AspectRatings.objects.all().filter(title=my_title)
+    if len(qs) < 1:
+      return "<p>There are no ratings yet. You could be the first!</p>"
     df = read_frame(qs)
     df = df.set_index('timestamp')
 
