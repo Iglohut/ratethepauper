@@ -114,7 +114,9 @@ class DataPlotler:
     qs = AspectRatings.objects.all()
     self.df = read_frame(qs)
     self.df = self.df.set_index('timestamp')
-    self.df = self.df[self.df.index.year >= datetime.date.today().year]
+    self.df_thisyear = self.df[self.df.index.year >=
+                               datetime.date.today().year]
+
     print(self.df)
 
   def plot_pie_aspects(self, title):
@@ -141,11 +143,11 @@ class DataPlotler:
     # # print(datetime.date.today())
     # print(" heyj2", datetime.date.today())
     # last_entry = datetime.date.today()
-    last_entry = self.df.index.max()
+    last_entry = self.df_thisyear.index.max()
     # Filter data for last N weeks
     date_N_weeks_ago = last_entry - datetime.timedelta(weeks=N_weeks)
-    df = self.df.loc[date_N_weeks_ago:last_entry +
-                     datetime.timedelta(days=1)]
+    df = self.df_thisyear.loc[date_N_weeks_ago:last_entry +
+                              datetime.timedelta(days=1)]
 
     # Make new week variable
     df['week'] = df.apply(
@@ -153,7 +155,7 @@ class DataPlotler:
 
     # So it is ordered by count
     data = []
-    for title_i in self.df['title'].value_counts().index.values:
+    for title_i in self.df_thisyear['title'].value_counts().index.values:
       df_title_weekmeans = df[df['title'] == title_i].groupby(
           'week', as_index=True)['rating'].mean()
 
@@ -172,7 +174,6 @@ class DataPlotler:
   def plot_hist_month(self, title):
 
     layout = copy.deepcopy(self.layout)
-    # layout['title']['text'] = title + datetime.datetime.now().strftime("%B")
     layout['title']['text'] = title + datetime.datetime.now().strftime("%B")
     layout['yaxis']['title'] = 'Count'
     layout['xaxis']['title'] = 'Rating'
@@ -186,11 +187,11 @@ class DataPlotler:
     datem = datetime.datetime(today.year, today.month, 1)
     today += datetime.timedelta(days=1)
 
-    df = self.df.loc[datem:today]
+    df = self.df_thisyear.loc[datem:today]
 
     # fig = go.Figure(layout=layout)
     data = []
-    for title_i in self.df['title'].value_counts().index.values:
+    for title_i in self.df_thisyear['title'].value_counts().index.values:
       df_titleratings = list(df[df['title'] == title_i]['rating'])
 
       data.append(go.Histogram(x=df_titleratings,
@@ -229,7 +230,8 @@ class DataPlotler:
     layout['title']['text'] = title
 
     # Extract data
-    df_means = self.df.groupby('title', as_index=True)['rating'].mean()
+    df_means = self.df.groupby(
+        'title', as_index=True)['rating'].mean()
 
     df_means_onvoldoende = df_means[df_means < 5.6]
     df_means_voldoende = df_means[df_means >= 5.6]
