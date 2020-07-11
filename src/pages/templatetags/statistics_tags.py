@@ -114,6 +114,8 @@ class DataPlotler:
     qs = AspectRatings.objects.all()
     self.df = read_frame(qs)
     self.df = self.df.set_index('timestamp')
+    self.df = self.df[self.df.index.year >= datetime.date.today().year]
+    print(self.df)
 
   def plot_pie_aspects(self, title):
     # Plots aspects rated in pie distribution chart
@@ -135,9 +137,14 @@ class DataPlotler:
     layout['xaxis']['title'] = 'Week'
     layout['xaxis']['dtick'] = 1
 
+    # print(" heeeujj", self.df.iloc[-1].name.date())
+    # # print(datetime.date.today())
+    # print(" heyj2", datetime.date.today())
+    # last_entry = datetime.date.today()
+    last_entry = self.df.index.max()
     # Filter data for last N weeks
-    date_N_weeks_ago = datetime.date.today() - datetime.timedelta(weeks=N_weeks)
-    df = self.df.loc[date_N_weeks_ago:datetime.date.today() +
+    date_N_weeks_ago = last_entry - datetime.timedelta(weeks=N_weeks)
+    df = self.df.loc[date_N_weeks_ago:last_entry +
                      datetime.timedelta(days=1)]
 
     # Make new week variable
@@ -165,6 +172,7 @@ class DataPlotler:
   def plot_hist_month(self, title):
 
     layout = copy.deepcopy(self.layout)
+    # layout['title']['text'] = title + datetime.datetime.now().strftime("%B")
     layout['title']['text'] = title + datetime.datetime.now().strftime("%B")
     layout['yaxis']['title'] = 'Count'
     layout['xaxis']['title'] = 'Rating'
@@ -174,7 +182,7 @@ class DataPlotler:
     marker = {"line": {"color": "#25232C", "width": 0.2},
               }
 
-    today = datetime.datetime.today()
+    today = datetime.date.today()
     datem = datetime.datetime(today.year, today.month, 1)
     today += datetime.timedelta(days=1)
 
@@ -200,8 +208,9 @@ class DataPlotler:
     layout['xaxis']['title'] = 'Rating'
 
     # Select ratingsbelow 6 for last N days
-    date_N_days_ago = datetime.date.today() - datetime.timedelta(days=N_days)
-    df = self.df.loc[date_N_days_ago:datetime.date.today() +
+    last_entry = self.df.index.max()
+    date_N_days_ago = last_entry - datetime.timedelta(days=N_days)
+    df = self.df.loc[date_N_days_ago:last_entry +
                      datetime.timedelta(days=1)]
     df = df[df['rating'] < 6]
 

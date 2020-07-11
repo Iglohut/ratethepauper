@@ -168,8 +168,10 @@ def get_plotly(my_title):
 
     # For weekly means
     # Filter data for last N weeks
-    date_N_weeks_ago = datetime.date.today() - datetime.timedelta(weeks=10)
-    df = df.loc[date_N_weeks_ago:datetime.date.today() +
+    last_entry = df.index.max()
+
+    date_N_weeks_ago = last_entry - datetime.timedelta(weeks=10)
+    df = df.loc[date_N_weeks_ago:last_entry +
                 datetime.timedelta(days=1)]
 
     df['week'] = df.apply(
